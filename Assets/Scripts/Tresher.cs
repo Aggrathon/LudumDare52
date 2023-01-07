@@ -6,8 +6,16 @@ using UnityEngine.Events;
 [RequireComponent(typeof(BoxCollider))]
 public class Tresher : MonoBehaviour
 {
-    [Header("Harvest")]
-    public UnityAction OnHarvest;
+    public UnityEvent onHarvest;
+
+
+    public void Harvest()
+    {
+        onHarvest.Invoke();
+        // TODO: harvest FX
+    }
+
+
 
     // [Header("Ground")]
     // public LayerMask groundLayerMask = 1 << 3;
