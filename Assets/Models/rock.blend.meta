@@ -1,19 +1,9 @@
 fileFormatVersion: 2
-guid: a52ac983c8b59b8459aa0e7e0fe3c6a9
+guid: 1149fce4358796b45be9b765bbab1dfd
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Accent
-    second: {fileID: 2100000, guid: 3bc013787b7ed464d8479a1ecae4e4f9, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Green
-    second: {fileID: 2100000, guid: e03cd4139bc14f7488d162336128152a, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -47,7 +37,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     sortHierarchyByName: 0
     importVisibility: 1
