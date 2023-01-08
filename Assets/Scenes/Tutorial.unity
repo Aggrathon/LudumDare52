@@ -721,7 +721,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   cropHeight: 0.9
-  harvestedAngle: 50
+  harvestedAngle: 60
   harvestedHeight: 0.2
   harvestedScale: 0.1
   mesh: {fileID: 2534964839176971238, guid: 188bf610ba1a51e47aaefb620ff50f3a, type: 3}
@@ -1152,6 +1152,96 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2653641461310440792, guid: 277688b3864777c49a0888becaa3680e,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2653641461310440792, guid: 277688b3864777c49a0888becaa3680e,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2653641461310440792, guid: 277688b3864777c49a0888becaa3680e,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2653641461310440792, guid: 277688b3864777c49a0888becaa3680e,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2653641461310440792, guid: 277688b3864777c49a0888becaa3680e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2653641461310440792, guid: 277688b3864777c49a0888becaa3680e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6539701228124771672, guid: 277688b3864777c49a0888becaa3680e,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6539701228124771672, guid: 277688b3864777c49a0888becaa3680e,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6539701228124771672, guid: 277688b3864777c49a0888becaa3680e,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6539701228124771672, guid: 277688b3864777c49a0888becaa3680e,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6539701228124771672, guid: 277688b3864777c49a0888becaa3680e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6539701228124771672, guid: 277688b3864777c49a0888becaa3680e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8914900972648630702, guid: 277688b3864777c49a0888becaa3680e,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8914900972648630702, guid: 277688b3864777c49a0888becaa3680e,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8914900972648630702, guid: 277688b3864777c49a0888becaa3680e,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8914900972648630702, guid: 277688b3864777c49a0888becaa3680e,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8914900972648630702, guid: 277688b3864777c49a0888becaa3680e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8914900972648630702, guid: 277688b3864777c49a0888becaa3680e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9077323107617487572, guid: 277688b3864777c49a0888becaa3680e,
         type: 3}
       propertyPath: m_Name
@@ -1241,11 +1331,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 330585545}
-    - target: {fileID: 7031805680180283095, guid: b4f78448b2a2284449713248c978fe94,
-        type: 3}
-      propertyPath: speed
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
