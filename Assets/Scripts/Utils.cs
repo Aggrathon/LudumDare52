@@ -28,4 +28,9 @@ public static class Utils
         }
 
     }
+
+    public static bool SimilarColor(Color a, Color b, float threshold)
+    {
+        return Mathf.Abs(a.r - b.r) + Mathf.Abs(a.b - b.b) + Mathf.Abs(a.g - b.g) < threshold;
+    }
 }

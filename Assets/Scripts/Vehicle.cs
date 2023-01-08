@@ -106,7 +106,7 @@ public class Vehicle : MonoBehaviour
         //     // Debug.Log(normal);
         // }
 
-        rot *= Quaternion.AngleAxis(turn * turning * Time.deltaTime * Mathf.Min(Mathf.Abs(gear), 1), rot * Vector3.up);
+        rot *= Quaternion.AngleAxis(turn * turning * Time.deltaTime * Mathf.Clamp(gear, -1, 1), rot * Vector3.up);
         pos += rot * Vector3.forward * (gear * speed * Time.deltaTime);
         rb.MovePosition(pos);
         rb.MoveRotation(rot);
