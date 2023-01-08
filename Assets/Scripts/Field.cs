@@ -48,6 +48,10 @@ public class Field : MonoBehaviour
     public int columns { get; protected set; }
     public int rows { get; protected set; }
 
+    public int TotalCrops => matrices.Length;
+    public int HarvestedCrops { get; protected set; }
+    public int TrampledCrops { get; protected set; }
+
     public void SetupGrid(System.Func<int, int, bool> filter)
     {
         columns = Mathf.FloorToInt(width / widthSpace);
@@ -80,6 +84,8 @@ public class Field : MonoBehaviour
             }
         }
         matrices = mats.ToArray();
+        HarvestedCrops = 0;
+        TrampledCrops = 0;
         // Debug.Log(string.Format("Created {0} crops", matrices.Count), this);
     }
 
@@ -152,7 +158,14 @@ public class Field : MonoBehaviour
                         var dir = Vector3.up;
                         if (Physics.Raycast(pos, dir, out RaycastHit hit, cropHeight, ~groundLayerMask))
                         {
-                            hit.collider.gameObject.GetComponent<Tresher>()?.Harvest();
+                            if (hit.collider.gameObject.GetComponent<Tresher>()?.Harvest() ?? false)
+                            {
+                                ++HarvestedCrops;
+                            }
+                            else
+                            {
+                                ++TrampledCrops;
+                            }
                             // TODO: Destroy crop FX
                             pos.y += harvestedHeight;
                             pos -= 2 * meshPosition;
