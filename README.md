@@ -1,7 +1,8 @@
 # Hardcore Combine Harvester - Ludum Dare 52
 
+![Banner](Assets/WebGLTemplates/Better2020/logo.png)
 
-> TODO: Add description and images
+> TODO: Add description
 
 My entry to the 52:nd Ludum Dare game jam (theme: *Harvest*), following the compo rules (alone, from scratch, 48 hours).
 
@@ -12,3 +13,5 @@ My entry to the 52:nd Ludum Dare game jam (theme: *Harvest*), following the comp
 
 Unity (game engine), Visual Studio Code (code), Paint.net (art), Audacity (audio), Blender (art), git (version control), and Github (hosting).
 
+
+> TODO: Add screenshots
