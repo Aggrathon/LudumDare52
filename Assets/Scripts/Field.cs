@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Field : MonoBehaviour
 {
+    public static bool shadows = true;
+
     [System.Serializable]
     public struct TrackedObject
     {
@@ -131,7 +133,16 @@ public class Field : MonoBehaviour
             //     var k = Mathf.Min(j + 1023, matrices.Length);
             //     Graphics.DrawMeshInstanced(mesh, i, materials[i], matrices[j..k]);
             // }
-            Graphics.DrawMeshInstanced(mesh, i, materials[i], matrices);
+            Graphics.DrawMeshInstanced(
+                mesh,
+                i,
+                materials[i],
+                matrices,
+                matrices.Length,
+                new MaterialPropertyBlock(),
+                shadows ? UnityEngine.Rendering.ShadowCastingMode.On : UnityEngine.Rendering.ShadowCastingMode.Off,
+                shadows
+            );
         }
     }
 
