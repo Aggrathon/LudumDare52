@@ -212,9 +212,13 @@ public class Field : MonoBehaviour
                 int rw = Mathf.CeilToInt(obj.radius / widthSpace);
                 int rl = Mathf.CeilToInt(obj.radius / lengthSpace);
                 var (w, l) = WorldToIndex(obj.transform.TransformPoint(obj.offset));
-                for (int i = w - rw; i <= w + rw; ++i)
+                var imin = Mathf.Max(0, w - rw);
+                var imax = Mathf.Min(columns - 1, w + rw);
+                var jmin = Mathf.Max(0, l - rl);
+                var jmax = Mathf.Min(rows - 1, l + rl);
+                for (int i = imin; i <= imax; ++i)
                 {
-                    for (int j = l - rl; j <= l + rl; ++j)
+                    for (int j = jmin; j <= jmax; ++j)
                     {
                         if (indices[i, j] >= 0)
                         {
