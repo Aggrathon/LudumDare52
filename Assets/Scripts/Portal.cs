@@ -8,10 +8,6 @@ public class Portal : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.attachedRigidbody?.GetComponent<PlayerController>() != null)
-        {
-            // TODO win
-            Debug.LogWarning("Victory");
-        }
+        other.attachedRigidbody?.GetComponent<PlayerController>()?.Victory();
     }
 }
