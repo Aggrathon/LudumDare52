@@ -2,59 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Field))]
 public class TextureField : MonoBehaviour
 {
     public Texture2D texture;
     public Color soilColor;
-    public GameObject prefab;
 
-    [Min(0)] public float width = 10f;
-    [Min(0)] public float length = 10f;
+    Field field;
 
-    [Min(0)] public float widthSpace = 0.2f;
-    [Min(0)] public float lengthSpace = 0.2f;
-
+    [ContextMenu("Refresh Gizmos")]
     void Start()
     {
-        var widthOffset = (width - Mathf.Floor(width / widthSpace) * widthSpace) * 0.5f;
-        var lengthOffset = (length - Mathf.Floor(length / lengthSpace) * lengthSpace) * 0.5f;
-        var pos = transform.position - new Vector3(width / 2, 0, length / 2);
-        for (float x = widthOffset; x <= width; x += widthSpace)
+        field = GetComponent<Field>();
+        var renderer = GetComponent<Renderer>();
+        if (renderer != null)
         {
-            int i = Mathf.RoundToInt((1 - x / width) * (float)(texture.width - 1));
-            for (float y = lengthOffset; y <= length; y += lengthSpace)
-            {
-                int j = Mathf.RoundToInt((1 - y / length) * (float)(texture.height - 1));
-                if (Utils.SimilarColor(texture.GetPixel(i, j), soilColor, 0.1f))
-                    Instantiate(prefab, pos + new Vector3(x, 0, y), Quaternion.identity).transform.SetParent(transform, true);
-            }
+            var bounds = renderer.bounds;
+            field.width = Mathf.Abs(bounds.center.x) * 2 + bounds.size.x;
+            field.length = Mathf.Abs(bounds.center.z) * 2 + bounds.size.z;
         }
+        field.SetupGrid(IsSoil);
     }
 
-    private void OnDrawGizmos()
+    bool IsSoil(int i, int j)
     {
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireCube(transform.position, new Vector3(width, 1f, length));
+        i = Mathf.RoundToInt((1f - (float)i / (float)(field.columns - 1)) * (float)(texture.width - 1));
+        j = Mathf.RoundToInt((1f - (float)j / (float)(field.rows - 1)) * (float)(texture.height - 1));
+        return Utils.SimilarColor(texture.GetPixel(i, j), soilColor, 0.1f);
     }
 
-    private void OnDrawGizmosSelected()
-    {
-        if (!Application.isPlaying)
-        {
-            Gizmos.color = Color.yellow;
-            var widthOffset = (width - Mathf.Floor(width / widthSpace) * widthSpace) * 0.5f;
-            var lengthOffset = (length - Mathf.Floor(length / lengthSpace) * lengthSpace) * 0.5f;
-            var pos = transform.position - new Vector3(width / 2, -0.5f, length / 2);
-            for (float x = widthOffset; x <= width; x += widthSpace)
-            {
-                int i = Mathf.RoundToInt((1 - x / width) * (float)(texture.width - 1));
-                for (float y = lengthOffset; y <= length; y += lengthSpace)
-                {
-                    int j = Mathf.RoundToInt((1 - y / length) * (float)(texture.height - 1));
-                    if (Utils.SimilarColor(texture.GetPixel(i, j), soilColor, 0.1f))
-                        Gizmos.DrawWireCube(pos + new Vector3(x, 0, y), new Vector3(0.05f, 1f, 0.05f));
-                }
-            }
-        }
-    }
 }
